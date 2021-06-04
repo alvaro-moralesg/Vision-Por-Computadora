@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-import p6A as tf_euc
+import p6A as tf
 import os
 
 img_o = cv2.imread('../ascii.jpg')
@@ -63,12 +63,7 @@ while (1):
             except: 
                 print('Error al guardar la imagen. Intentar nuevamente.')           #Error que ocurre cuando se selecciona un punto o una linea
         elif k == ord('e'):
-            print('Para aplicar la transformacion ingrese:')
-            angle = input('Angulo de rotacion en grados: ')
-            escala = input('Constante de escalado: ')
-            tx = input('Traslacion en eje x: ')
-            ty = input('Traslacion en y: ')
-            img_transf =  tf_euc.transf(img_slct, float(angle), int(tx), int(ty), float(escala))
+            img_transf =  tf.euc_s(img_slct)
             try:
                 cv2.imwrite('tf_figure.png', img_transf)
                 print("Imagen transformada guardada como 'tf_figure.png'")
