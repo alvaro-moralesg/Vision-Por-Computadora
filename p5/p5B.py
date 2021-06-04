@@ -3,7 +3,7 @@ import numpy as np
 import p5A as tf
 import os
 
-img_o = cv2.imread('../ascii.jpg')
+img_o = cv2.imread("../ascii.jpg")
 img_d = img_o.copy()
 img_slct = None
 slct_flag = False
